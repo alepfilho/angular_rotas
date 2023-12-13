@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <button routerLink="" mat-button><h1>Projeto rotas</h1></button>
+  <span class="example-spacer"></span>
+  <button [color]="rota == '/' ? 'accent' : ''" routerLink="" mat-button>Home</button>
+  <button [color]="rota == '/login' ? 'accent' : ''" routerLink="login" mat-button>Login</button>
+  <button [color]="rota == '/cursos' ? 'accent' : ''" routerLink="cursos" mat-button>Cursos</button>
+  <button [color]="rota == '/curso' ? 'accent' : ''" [routerLink]="['curso', idCurso.value]" mat-button>Curso</button>
+</mat-toolbar>
+<div class="container">
+  <input type="text" #idCurso>
+  <router-outlet></router-outlet>
+</div>
